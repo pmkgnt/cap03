@@ -24,10 +24,13 @@ Content-Type: application/json
 ### GET Orders
 GET http://localhost:4004/myService/Orders
 
+### GET Items
+GET http://localhost:4004/myService/Items
+
 ### GET Orders
 GET http://localhost:4004/myService/Orders/908
 
-### GET OrderItems
+### GET Orders items
 GET http://localhost:4004/myService/Orders/908/Items
 
 ### POST Orders - DEEP Insert - Orders > Items
@@ -38,9 +41,15 @@ Content-Type: application/json
  "Items": [{"id": 1, "product_id": "MAT001", "quantity": 20}]}
 
 ### GET Customer orders
-GET http://localhost:4004/myService/Customers/6/Orders
+GET http://localhost:4004/myService/Customers/6/Orders/910/Items
 
 ### DELETE Customers - Delete existing customer - DEEP Delete of Customers > Orders > Items
 DELETE http://localhost:4004/myService/Customers/6
 
+### Create Customer Orders -- DEEP Insert Customers > Orders > Items
+POST http://localhost:4004/myService/Customers HTTP/1.1
+Content-Type: application/json
 
+{ "id": 6, "name": "Name F", "gender": "M", "location": "Location F", "segment": "PRE",
+  "Orders":[{ "id": 910, "description": "Order 910", "date": "2023-02-10",
+    "Items": [{"id": 1, "product_id": "MAT001", "quantity": 20}]}]}
