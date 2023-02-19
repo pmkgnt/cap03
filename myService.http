@@ -52,4 +52,4 @@ Content-Type: application/json
 
 { "id": 6, "name": "Name F", "gender": "M", "location": "Location F", "segment": "PRE",
   "Orders":[{ "id": 910, "description": "Order 910", "date": "2023-02-10",
-    "Items": [{"id": 1, "product_id": "MAT001", "quantity": 20}]}]}
+    "Items": [{"id": 1, "product_id": "MAT001", "quantity": 20},{"id": 2, "product_id": "MAT002", "quantity": 2}]}]}
