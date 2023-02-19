@@ -1,0 +1,6 @@
+id;name;gender;location;segment
+1;Name A;M;Location A;PRE
+2;Name B;F;Location B;NEW
+3;Name C;M;Location C;EXT
+4;Name D;M;Location D;REG
+5;Name E;M;Location E;REG

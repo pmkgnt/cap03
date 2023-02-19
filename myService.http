@@ -1,0 +1,46 @@
+### GET Customers - Read all Customers
+GET http://localhost:4004/myService/Customers
+
+### POST Customers - Create a new customer
+POST http://localhost:4004/myService/Customers HTTP/1.1
+Content-Type: application/json
+
+{ "id": 6, "name": "Name F", "gender": "M", "location": "Location F", "segment": "PRE" }
+
+### PUT Customers - Modify existing customer, but with overwrite of all columns
+PUT http://localhost:4004/myService/Customers/6
+Content-Type: application/json
+
+{ "id": 6, "name": "Name F", "gender": "M", "location": "Location F", "segment": "NEW" }
+
+### PATCH Customers - Modify existing customer, with only specified column
+PATCH http://localhost:4004/myService/Customers/6
+Content-Type: application/json
+
+{ "segment": "EXT" }
+
+####################################################
+
+### GET Orders
+GET http://localhost:4004/myService/Orders
+
+### GET Orders
+GET http://localhost:4004/myService/Orders/908
+
+### GET OrderItems
+GET http://localhost:4004/myService/Orders/908/Items
+
+### POST Orders - DEEP Insert - Orders > Items
+POST http://localhost:4004/myService/Orders HTTP/1.1
+Content-Type: application/json
+
+{ "id": 910, "description": "Order 910", "date": "2023-02-10", "customer_id": 6,
+ "Items": [{"id": 1, "product_id": "MAT001", "quantity": 20}]}
+
+### GET Customer orders
+GET http://localhost:4004/myService/Customers/6/Orders
+
+### DELETE Customers - Delete existing customer - DEEP Delete of Customers > Orders > Items
+DELETE http://localhost:4004/myService/Customers/6
+
+
